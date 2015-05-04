@@ -9,6 +9,7 @@ use React\Stream\WritableStreamInterface;
 /**
  * @event headers-written
  * @event response
+ * @event redirect
  * @event drain
  * @event error
  * @event end
@@ -178,6 +179,8 @@ class Request implements WritableStreamInterface
 
                 //Perform the same tricks.
                 $this->end();
+
+                $this->emit('redirect', [ $response ]);
 
                 return;
             }

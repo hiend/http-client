@@ -17,6 +17,7 @@ Interesting events emitted by Request:
 
 * `response`: The response headers were received from the server and successfully
   parsed. The first argument is a Response instance.
+* `redirect`: The request is redirected. The argument is a Response instance.
 * `error`: An error occured.
 * `end`: The request is finished. If an error occured, it is passed as first
   argument. Second and third arguments are the Response and the Request.
